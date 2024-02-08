@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "gendiff",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R1zd1ch/frontend-project-46.git"
+  },
+  "author": "Evgeny Cheraev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R1zd1ch/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/R1zd1ch/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
