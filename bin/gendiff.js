@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { Command } from "commander";
+import { Command } from 'commander';
+import diff from '../src/index.js';
 
 const program = new Command();
 
@@ -11,7 +12,7 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .action((filepath1, filepath2) => {
-	console.log(filepath1, filepath2)
+    console.log(diff(filepath1, filepath2));
   });
 
 program.parse();
