@@ -1,9 +1,9 @@
 name: Linter
 on: push
-  jobs:
+jobs:
   build:
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v2
-     - run: npm install
-     - run: make lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: make lint
