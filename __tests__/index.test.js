@@ -18,3 +18,13 @@ describe('Stylish Tests', () => {
     expect(gendiff(filename1, filename2)).toEqual(result);
   });
 });
+
+describe('Flat YAML Stylish Test', () => {
+  test('filejson', () => {
+    const filename1 = getFixturePath('file1.yml');
+    const filename2 = getFixturePath('file2.yml');
+    const resultname = getFixturePath('file_result.txt');
+    const result = readFileSync(resultname, 'utf8');
+    expect(gendiff(filename1, filename2)).toEqual(result);
+  });
+});
