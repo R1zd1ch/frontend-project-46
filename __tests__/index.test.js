@@ -69,6 +69,36 @@ describe('YAML plain Test', () => {
   });
 });
 
+describe('json jsonFormat Test', () => {
+  test('filejson', () => {
+    const filepath1 = getFixturePath('file1.json');
+    const filepath2 = getFixturePath('file2.json');
+    const resultname = getFixturePath('expectedJson.txt');
+    const result = readFileSync(resultname, 'utf8');
+    expect(gendiff(filepath1, filepath2, 'json')).toEqual(result);
+  });
+});
+
+describe('YML jsonFormat Test', () => {
+  test('fileyml', () => {
+    const filepath1 = getFixturePath('file1.yml');
+    const filepath2 = getFixturePath('file2.yml');
+    const resultname = getFixturePath('expectedJson.txt');
+    const result = readFileSync(resultname, 'utf8');
+    expect(gendiff(filepath1, filepath2, 'json')).toEqual(result);
+  });
+});
+
+describe('YAML jsonFormat Test', () => {
+  test('fileyaml', () => {
+    const filepath1 = getFixturePath('file1.yaml');
+    const filepath2 = getFixturePath('file2.yaml');
+    const resultname = getFixturePath('expectedJson.txt');
+    const result = readFileSync(resultname, 'utf8');
+    expect(gendiff(filepath1, filepath2, 'json')).toEqual(result);
+  });
+});
+
 describe('Errors tests', () => {
   test('Unsupported format type', () => {
     const filepath1 = getFixturePath('file1.yaml');

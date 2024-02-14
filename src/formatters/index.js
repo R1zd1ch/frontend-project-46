@@ -7,6 +7,8 @@ const format = (diff, formatType) => {
       return stylish(diff);
     case 'plain':
       return plain(diff);
+    case 'json':
+      return JSON.stringify(diff);
     default:
       throw new Error(`Unsupported format type (${formatType})! [Supported: stylish, plain, json]`);
   }
