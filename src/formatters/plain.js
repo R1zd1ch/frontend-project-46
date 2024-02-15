@@ -5,7 +5,7 @@ const formatValueToPlain = (value) => {
   if (_.isPlainObject(value)) {
     return '[complex value]';
   }
-  if (_.isString(value) || _.isFinite(value)) {
+  if (_.isString(value)) {
     return `'${value}'`;
   }
   return `${value}`;
