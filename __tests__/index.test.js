@@ -105,8 +105,8 @@ describe('Errors tests', () => {
     const filepath2 = getFixturePath('file2.yaml');
     const badpath1 = getFixturePath('file1.txt');
     const badpath2 = getFixturePath('file2.txt');
-    const extErr = new Error('Unsupported file extention (.txt)! [Supported: .json, .yml, .yaml]');
-    expect(() => gendiff(filepath1, badpath2)).toThrow(extErr);
-    expect(() => gendiff(badpath1, filepath2)).toThrow(extErr);
+    const formatErr = new Error('Unsupported file format (txt)! [Supported: json, yml, yaml]');
+    expect(() => gendiff(filepath1, badpath2)).toThrow(formatErr);
+    expect(() => gendiff(badpath1, filepath2)).toThrow(formatErr);
   });
 });
