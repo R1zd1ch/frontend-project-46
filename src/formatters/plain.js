@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { getKey, getType, getValue } from './utils.js';
+import { getKey, getType, getValue } from '../utils.js';
 
 const formatValueToPlain = (value) => {
   if (_.isPlainObject(value)) {

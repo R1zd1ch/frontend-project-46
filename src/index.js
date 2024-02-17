@@ -10,13 +10,13 @@ const getRawData = (filepath) => {
   return readFileSync(fullPath, 'utf-8');
 };
 
-const getExtention = (filepath) => path.extname(filepath);
+const getFormat = (filepath) => path.extname(filepath).slice(1);
 
 const genDiff = (filepath1, filepath2, formatType = 'stylish') => {
   const rawData1 = getRawData(filepath1);
   const rawData2 = getRawData(filepath2);
-  const extName1 = getExtention(filepath1);
-  const extName2 = getExtention(filepath2);
+  const extName1 = getFormat(filepath1);
+  const extName2 = getFormat(filepath2);
   const parsedData1 = parse(rawData1, extName1);
   const parsedData2 = parse(rawData2, extName2);
   const diff = diffConstructor(parsedData1, parsedData2);

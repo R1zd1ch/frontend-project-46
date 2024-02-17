@@ -1,14 +1,14 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
 
-const format = (diff, formatType) => {
+const format = (ast, formatType) => {
   switch (formatType) {
     case 'stylish':
-      return stylish(diff);
+      return stylish(ast);
     case 'plain':
-      return plain(diff);
+      return plain(ast);
     case 'json':
-      return JSON.stringify(diff);
+      return JSON.stringify(ast);
     default:
       throw new Error(`Unsupported format type (${formatType})! [Supported: stylish, plain, json]`);
   }

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { getKey, getValue, getType } from './utils.js';
+import { getKey, getValue, getType } from '../utils.js';
 
 const stringify = (value, currentDepth) => {
   const iter = (currentValue, depth) => {
@@ -17,9 +17,11 @@ const stringify = (value, currentDepth) => {
   return iter(value, currentDepth);
 };
 
+const createIdent = (depth) => ' '.repeat(depth * 4 - 2);
+
 const stylish = (diff) => {
   const iter = (currentNode, depth) => {
-    const indent = ' '.repeat(depth * 4 - 2);
+    const indent = createIdent(depth);
     const bracketIndent = '    '.repeat(depth - 1);
     const lines = currentNode.map((node) => {
       const [key, type, value] = [getKey(node), getType(node), getValue(node)];
